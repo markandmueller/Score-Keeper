@@ -6,13 +6,10 @@ const dropDown = document.querySelector('#toPoints');
 const reset = document.querySelector('#reset');
 
 dropDown.addEventListener('change', (e) => {
-    let toPoints = dropDown.value;
-    return toPoints;
 });
 
 let p1Score = 0;
 let p2Score = 0;
-//let playingTo = 0;
 
 const pointToP1 = function () {
     p1Score++;
@@ -36,23 +33,12 @@ const pointToP2 = function () {
 }
 p2button.addEventListener('click', pointToP2);
 
-
 let stopButtons = function () {
     p1button.removeEventListener('click', pointToP1);
     p2button.removeEventListener('click', pointToP2);
 }
 
 const resetAll = function () {
-    resetScores();
-    p1holder.classList.add('default');
-    p2holder.classList.add('default');
+    window.location.reload();
 }
-
-let resetScores = function () {
-    p1Score = 0;
-    p1holder.innerText = p1Score;
-    p2Score = 0;
-    p2holder.innerText = p2Score;
-}
-
 reset.addEventListener('click', resetAll);
